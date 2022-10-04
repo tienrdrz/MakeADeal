@@ -1,4 +1,4 @@
-# Trading-Thing
+# TradeWay
 
 ## User Story (rough)
 
