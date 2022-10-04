@@ -22,10 +22,12 @@ const ItemSchema = new Schema({
         get: createdAtVal => dateFormat(createdAtVal)
     },
     itemDescription: {
-        type: String
+        type: String,
+        required: true
     },
     itemPrice: {
-        type: Number
+        type: Number,
+        required: true
     }
 
 });

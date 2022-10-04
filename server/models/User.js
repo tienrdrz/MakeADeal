@@ -7,11 +7,12 @@ const UserSchema = new Schema(
             type: String,
             unique: true,
             required: 'Username is required',
-            trim: true
+            minlength: 3
         },
         password : {
             type: String,
-            required: 'Password is required'
+            required: 'Password is required',
+            minlength: 5
         },
         items: [
             {
