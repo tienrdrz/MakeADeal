@@ -1,0 +1,26 @@
+{
+  "name": "trading-thing",
+  "version": "1.0.0",
+  "description": "## User Story (rough)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tienrdrz/Trading-Thing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tienrdrz/Trading-Thing/issues"
+  },
+  "homepage": "https://github.com/tienrdrz/Trading-Thing#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongoose": "^6.6.4",
+    "validator": "^13.7.0"
+  }
+}
