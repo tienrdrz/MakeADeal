@@ -14,17 +14,20 @@ const ItemSchema = new Schema({
         type: String,
         required: true
     },
-    postedBy: {
-        type: String
+    username: {
+        type: String,
+        required: true
     },
     postedAt: {
         type: Date,
-        default: Date.now,
-        get: createdAtVal => dateFormat(createdAtVal)
+      default: Date.now,
+      get: timestamp => dateFormat(timestamp)
     },
-    itemDescription: {
+    itemDesc: {
         type: String,
-        required: true
+        required: true,
+        minlength: 1,
+        maxlength: 280
     },
     itemPrice: {
         type: Number,
