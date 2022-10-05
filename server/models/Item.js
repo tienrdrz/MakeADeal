@@ -11,7 +11,8 @@ const ItemSchema = new Schema({
         ref: 'User'
     },
     itemName: {
-        type: String
+        type: String,
+        required: true
     },
     postedBy: {
         type: String
