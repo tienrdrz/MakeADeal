@@ -26,6 +26,12 @@ const resolvers = {
 
       throw new AuthenticationError("Can't find this user");
     },
+    // still have problem, don't use query items
+    // items: async (parent, args, context) => {
+    //   const items = await Item.find({});
+
+    //   return items;
+    // },
   },
   Mutation: {
     addUser: async (parent, args) => {
