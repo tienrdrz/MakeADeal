@@ -52,18 +52,13 @@ const resolvers = {
     },
     addItem: async (parent, args, context) => {
       if (context.user) {
-        const item = await Item.create({
-          ...args,
-          username: context.user.username,
-        });
-
-        await User.findByIdAndUpdate(
+        const updatedUser = await User.findByIdAndUpdate(
           { _id: context.user._id },
-          { $push: { items: item._id } },
-          { new: true }
+          { $addToSet: { items: { ...args } } },
+          { new: true, runValidators: true }
         );
 
-        return item;
+        return updatedUser;
       }
 
       throw new AuthenticationError("You need to be logged in!");

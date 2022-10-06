@@ -14,7 +14,7 @@ const typeDefs = gql`
     itemName: String
     postedAt: String
     itemDesc: String
-    itemPrice: Int
+    itemPrice: String
   }
 
   type Query {

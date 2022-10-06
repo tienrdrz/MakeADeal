@@ -2,7 +2,7 @@ const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
 
 // import items schema from xxxx.js
-const itemSchema = require("./Item");
+const Item = require("./Item");
 
 const userSchema = new Schema(
   {
@@ -21,7 +21,7 @@ const userSchema = new Schema(
       required: true,
       min: 4,
     },
-    items: [itemSchema],
+    items: [Item.schema],
   },
   {
     // set this to use virtual below

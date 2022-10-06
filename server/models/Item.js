@@ -1,4 +1,4 @@
-const { Schema } = require("mongoose");
+const { Schema, model } = require("mongoose");
 const dateFormat = require("../utils/dateFormat");
 
 // const BuySchema = new Schema({
@@ -6,18 +6,11 @@ const dateFormat = require("../utils/dateFormat");
 // })
 
 const itemSchema = new Schema({
-  //   User_id: {
-  //     type: Schema.Types.ObjectId,
-  //     ref: "User",
-  //   },
   itemName: {
     type: String,
     required: true,
+    trim: true,
   },
-  //   username: {
-  //     type: String,
-  //     required: true,
-  //   },
   postedAt: {
     type: Date,
     default: Date.now,
@@ -31,8 +24,14 @@ const itemSchema = new Schema({
   },
   itemPrice: {
     type: Number,
+    min: 0.99,
     required: true,
+  },
+  itemImage: {
+    type: String,
   },
 });
 
-module.exports = itemSchema;
+const Item = model("Item", itemSchema);
+
+module.exports = Item;
