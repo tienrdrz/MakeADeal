@@ -15,6 +15,17 @@ const resolvers = {
 
       throw new AuthenticationError("Not logged in");
     },
+    user: async (parent, { email }, context) => {
+      if (context.user) {
+        const user = await User.findOne({ email })
+          .select("-__v -password")
+          .populate("items");
+
+        return user;
+      }
+
+      throw new AuthenticationError("Can't find this user");
+    },
   },
   Mutation: {
     addUser: async (parent, args) => {
