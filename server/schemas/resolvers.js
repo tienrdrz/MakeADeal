@@ -6,10 +6,9 @@ const resolvers = {
   Query: {
     me: async (parent, args, context) => {
       if (context.user) {
-        const userData = await User.findOne({ _id: context.user._id }).select(
-          "-__v -password"
-          .populate('items')
-        );
+        const userData = await User.findOne({ _id: context.user._id })
+          .select("-__v -password")
+          .populate("items");
 
         return userData;
       }
@@ -39,9 +38,13 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
-    },    addItem: async (parent, args, context) => {
+    },
+    addItem: async (parent, args, context) => {
       if (context.user) {
-        const item = await Item.create({ ...args, username: context.user.username });
+        const item = await Item.create({
+          ...args,
+          username: context.user.username,
+        });
 
         await User.findByIdAndUpdate(
           { _id: context.user._id },
@@ -52,8 +55,8 @@ const resolvers = {
         return item;
       }
 
-      throw new AuthenticationError('You need to be logged in!');
-    }
+      throw new AuthenticationError("You need to be logged in!");
+    },
   },
 };
 
