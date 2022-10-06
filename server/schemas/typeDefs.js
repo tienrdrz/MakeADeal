@@ -9,22 +9,28 @@ const typeDefs = gql`
     items: [item]
   }
 
-  type item {
+  type Item {
     _id: ID
-    content: String
-    date: String
+    itemName: String
+    postedAt: String
+    itemDescription: String
+    itemPrice: Int
   }
 
   type Query {
     me: User
+    user(username: String!): User
+    items(username: String): [Item]
   }
   type Auth {
     token: ID!
     user: User
+    
   }
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
+    addItem(itemDesc: String!): Item
   }
 `;
 
