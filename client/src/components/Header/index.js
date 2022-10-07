@@ -13,7 +13,7 @@ const Header = () => {
         <header className='Header'>
             <div className='container'>
                 <Link to="/">
-                <h1>Trading Exchange</h1>
+                <h1 className='title'>Trading Exchange</h1>
                 </Link>
                 <nav className='nav'>
                     {Auth.loggedIn()? (
@@ -21,13 +21,13 @@ const Header = () => {
                        <Link to="/profile">Your Listings
                        </Link>
                        <a href="/" onClick={logout}>
-                         Logout
+                         <div className='logout'>Logout</div>
                        </a>
                      </>
                    ) : (
                      <>
-                       <Link to="/login">Login</Link>
-                       <Link to="/signup">Signup</Link>
+                       <Link to="/login"><div className='login'>Login</div></Link>
+                       <Link to="/signup"><div className='signup'>Signup</div></Link>
                      </>
                    )}
                  </nav>

@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import React from 'react'
@@ -9,11 +9,20 @@ import {
   createHttpLink,
 }from '@apollo/client';
 
+import { setContext } from '@apollo/client/link/context';
+
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Nav from './components/Nav';
 
 import Home from './pages/Home';
-import { from } from '@apollo/client';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import Buy from './pages/Buy';
+import Sell from './pages/Sell';
+import Trade from './pages/Trade';
+
+//import { from } from '@apollo/client';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -42,6 +51,7 @@ function App() {
 
       <div className="App">
             <Header />
+            <Nav />
             <div className='container'>
 
 
@@ -50,6 +60,26 @@ function App() {
                 path="/"
                 element={<Home />}
                 />
+                 <Route 
+                path="/login" 
+                element={<Login />} 
+              />
+              <Route 
+                path="/signup" 
+                element={<Signup />} 
+              />
+                 <Route 
+                path="/buy" 
+                element={<Buy />} 
+              />
+                 <Route 
+                path="/sell" 
+                element={<Sell />} 
+              />
+                 <Route 
+                path="/trade" 
+                element={<Trade />} 
+              />
               </Routes>
             </div>
 
