@@ -12,6 +12,14 @@ const Home = () => {
 
         {loggedIn && userData ? <div className=""></div> : null}
       </div> */}
+      Hello world
+      <ul>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+      </ul>
     </main>
 
     // <div className="">
