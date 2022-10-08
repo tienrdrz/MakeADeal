@@ -1,35 +1,82 @@
-import React, { useState } from 'react';
-import { useMutation } from '@apollo/client';
+import React, { useState } from "react";
+import { useMutation } from "@apollo/client";
+import { LOGIN } from "../utils/mutations";
+import Auth from "../utils/auth";
+import { Link } from "react-router-dom";
 
-import { SignIn } from '../utils/login'
+function Login(props) {
+  const [formState, setFormState] = useState({
+    email: "",
+    password: "",
+  });
+  const [login, { error }] = useMutation(LOGIN);
 
-import Auth from '../utils/auth';
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
 
-const Login = () => {
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
 
-    return (
-      <main>
-        <div className='login-container'>
-            <h2>Login</h2>
-            <form>
-                <div className='input'>
-                    <label>Email:</label>
-                    <input type='email' id='email' 
-                    name='email' placeholder="example@mail.com"></input>
-                </div>
-                <div className='input'>
-                    <label>Password:</label>
-                    <input type="password" id="password" 
-                    name="password" placeholder="Password"></input>
-                </div>
-                <div className="submit-btn">
-                        <input type="submit" className="button" 
-                        id="signin" value="Sign In"></input>
-                    </div>
-            </form>
+    try {
+      const response = await login({
+        variables: {
+          // email: formState.email,
+          // password: formState.password,
+          ...formState,
+        },
+      });
+      const token = response.data.login.token;
+      Auth.login(token);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  return (
+    <div className="container">
+      <form className="form-box" onSubmit={handleFormSubmit}>
+        <div className="login-box">
+          <h1>login</h1>
+          <input
+            type="email"
+            placeholder="email"
+            name="email"
+            onChange={handleChange}
+          />
+          <input
+            type="password"
+            placeholder="password"
+            name="password"
+            onChange={handleChange}
+          />
+          <button>Login</button>
         </div>
-      </main>  
-    )
+        {error ? (
+          <div>
+            <p className="error-text">The provided credentials are incorrect</p>
+          </div>
+        ) : null}
+      </form>
+      <div className="con-box right">
+        <h2>
+          Welcome to <span>TradeWay</span>
+        </h2>
+        <p>
+          Come and look your exciting <span>items</span>
+        </p>
+        <img src="" alt="" />
+        <p>Don't have an account</p>
+        <button id="register">
+          <Link to="/signup">Go Signup</Link>
+        </button>
+      </div>
+    </div>
+  );
 }
 
 export default Login;
