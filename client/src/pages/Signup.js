@@ -1,36 +1,86 @@
 import React, { useState } from "react";
+import { useMutation } from "@apollo/client";
+import { ADD_USER } from "../utils/mutations";
+import Auth from "../utils/auth";
 import { Link } from "react-router-dom";
 
-function Signup() {
+function Signup(props) {
   const [formState, setFormState] = useState({
     username: "",
     email: "",
     password: "",
   });
+  const [addUser, { error }] = useMutation(ADD_USER);
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+    console.log(name, value);
+  };
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const response = await addUser({
+        variables: {
+          // username: formState.username,
+          // email: formState.email,
+          // password: formState.password,
+          ...formState,
+        },
+      });
+      console.log(response);
+      const token = response.data.addUser.token;
+      Auth.login(token);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
-    <div class="container">
-      <div class="form-box">
-        {/* <!-- signup --> */}
-        <div class="register-box ">
+    <div className="container">
+      <div className="form-box">
+        <form className="register-box" onSubmit={handleFormSubmit}>
           <h1>register</h1>
-          <input type="text" placeholder="username" />
-          <input type="email" placeholder="email" />
-          <input type="password" placeholder="password" />
+          <input
+            type="text"
+            name="username"
+            placeholder="username"
+            onChange={handleChange}
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="email"
+            onChange={handleChange}
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="password"
+            onChange={handleChange}
+          />
           <button>Signup</button>
-        </div>
+        </form>
+        {error && <div className="error-text">Sign up failed</div>}
       </div>
 
-      <div class="con-box right">
+      <div className="con-box right">
         <h2>
           Welcome to <span>TradeWay</span>
         </h2>
         <p>
-          Come and look your exciting <span>items</span>
+          Come and find exciting <span>items</span>
         </p>
         <img src="" alt="" />
-        <p>Don't have an account</p>
-        <button id="register">Go Signup</button>
+        <p>Already have an account</p>
+        <button id="login">
+          <Link to="/login">Go Login</Link>
+        </button>
       </div>
     </div>
   );

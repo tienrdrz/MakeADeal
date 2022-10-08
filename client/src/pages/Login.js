@@ -1,19 +1,68 @@
-import React from "react";
+import React, { useState } from "react";
+import { useMutation } from "@apollo/client";
+import { LOGIN } from "../utils/mutations";
+import Auth from "../utils/auth";
 import { Link } from "react-router-dom";
 
-function Signup() {
+function Login(props) {
+  const [formState, setFormState] = useState({
+    email: "",
+    password: "",
+  });
+  const [login, { error }] = useMutation(LOGIN);
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const response = await login({
+        variables: {
+          // email: formState.email,
+          // password: formState.password,
+          ...formState,
+        },
+      });
+      const token = response.data.login.token;
+      Auth.login(token);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
-    <div class="container">
-      <div class="form-box">
-        {/* <!-- login --> */}
-        <div class="login-box">
+    <div className="container">
+      <form className="form-box" onSubmit={handleFormSubmit}>
+        <div className="login-box">
           <h1>login</h1>
-          <input type="email" placeholder="email" />
-          <input type="password" placeholder="password" />
+          <input
+            type="email"
+            placeholder="email"
+            name="email"
+            onChange={handleChange}
+          />
+          <input
+            type="password"
+            placeholder="password"
+            name="password"
+            onChange={handleChange}
+          />
           <button>Login</button>
         </div>
-      </div>
-      <div class="con-box right">
+        {error ? (
+          <div>
+            <p className="error-text">The provided credentials are incorrect</p>
+          </div>
+        ) : null}
+      </form>
+      <div className="con-box right">
         <h2>
           Welcome to <span>TradeWay</span>
         </h2>
@@ -22,10 +71,12 @@ function Signup() {
         </p>
         <img src="" alt="" />
         <p>Don't have an account</p>
-        <button id="register">Go Signup</button>
+        <button id="register">
+          <Link to="/signup">Go Signup</Link>
+        </button>
       </div>
     </div>
   );
 }
 
-export default Signup;
+export default Login;

@@ -1,18 +1,19 @@
 import React from "react";
 
-import Auth from "../utils/auth";
+// import Auth from "../utils/auth";
 
 const Home = () => {
-  const loggedIn = Auth.loggedIn();
+  // const loggedIn = Auth.loggedIn();
 
   return (
-    <main>
+    <main className="">
       {/* <div className="">
         {loggedIn && <div className=""></div>}
 
         {loggedIn && userData ? <div className=""></div> : null}
       </div> */}
       Hello world
+      {/* <ItemList /> */}
       <ul>
         <li>1</li>
         <li>1</li>
@@ -21,11 +22,6 @@ const Home = () => {
         <li>1</li>
       </ul>
     </main>
-
-    // <div className="">
-    //   <Menu />
-    //   <ItemList />
-    // </div>
   );
 };
 
