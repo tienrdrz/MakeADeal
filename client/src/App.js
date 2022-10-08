@@ -12,7 +12,7 @@ import { setContext } from "@apollo/client/link/context";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Nav from './components/Nav';
+//import Nav from './components/Nav';
 
 import Home from './pages/Home';
 import Login from './pages/Login';
@@ -54,6 +54,9 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/buy" element={<Buy />} />
+              <Route path="/trade" element={<Trade />} />
+              <Route path="/sell" element={<Sell />} />
             </Routes>
           </div>
 
