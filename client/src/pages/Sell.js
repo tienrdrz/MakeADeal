@@ -3,8 +3,14 @@ import { useMutation } from '@apollo/client';
 
 import Auth from '../utils/auth';
 
-const Sell = () => {
 
+
+const Sell = () => {
+    return (
+        <main>
+            
+        </main>
+    )
 }
 
 export default Sell;

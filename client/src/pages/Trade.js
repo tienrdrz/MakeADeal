@@ -8,13 +8,13 @@ const Trade = () => {
         {
             itemName: "Hoodie",
             itemDesc: "A large black hoodie that is partially used, looks and feels brand new",
-            itemPrice: 35.50,
+            itemPrice: 35,
             itemImage: "https://t4.ftcdn.net/jpg/04/26/42/63/360_F_426426355_CV69FJfQ2XRWAQtBtOBwkrZwMI0UxVZ0.jpg"
         },
         {
             itemName: "Scarf",
             itemDesc: "Unused orange ",
-            itemPrice: 35.50,
+            itemPrice: 10,
             itemImage: "https://t4.ftcdn.net/jpg/04/26/42/63/360_F_426426355_CV69FJfQ2XRWAQtBtOBwkrZwMI0UxVZ0.jpg"
         }
     ]
