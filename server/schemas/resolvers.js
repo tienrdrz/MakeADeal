@@ -15,6 +15,7 @@ const resolvers = {
 
       throw new AuthenticationError("Not logged in");
     },
+    // query a user
     user: async (parent, { email }, context) => {
       if (context.user) {
         const user = await User.findOne({ email })
@@ -26,10 +27,15 @@ const resolvers = {
 
       throw new AuthenticationError("Can't find this user");
     },
+    // query all product
     items: async (parent, args, context) => {
       const items = await Item.find();
 
       return items;
+    },
+    // query one product
+    item: async (parent, { _id }) => {
+      return await Item.findById(_id);
     },
   },
   Mutation: {

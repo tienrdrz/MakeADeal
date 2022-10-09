@@ -27,6 +27,7 @@ const typeDefs = gql`
     me: User
     user(email: String!): User
     items: [Item]
+    item(_id: ID!): Item
   }
 
   type Auth {
