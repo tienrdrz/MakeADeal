@@ -15,6 +15,7 @@ const resolvers = {
 
       throw new AuthenticationError("Not logged in");
     },
+    // query a user
     user: async (parent, { email }, context) => {
       if (context.user) {
         const user = await User.findOne({ email })
@@ -26,12 +27,16 @@ const resolvers = {
 
       throw new AuthenticationError("Can't find this user");
     },
-    // still have problem, don't use query items
-    // items: async (parent, args, context) => {
-    //   const items = await Item.find({});
+    // query all product
+    items: async (parent, args, context) => {
+      const items = await Item.find();
 
-    //   return items;
-    // },
+      return items;
+    },
+    // query one product
+    item: async (parent, { _id }) => {
+      return await Item.findById(_id);
+    },
   },
   Mutation: {
     addUser: async (parent, args) => {
@@ -58,13 +63,15 @@ const resolvers = {
     },
     addItem: async (parent, args, context) => {
       if (context.user) {
+        const createdItem = await Item.create(args);
+
         const updatedUser = await User.findByIdAndUpdate(
           { _id: context.user._id },
           { $addToSet: { items: { ...args } } },
           { new: true, runValidators: true }
         );
-
-        return updatedUser;
+        console.log(updatedUser, createdItem);
+        return { updatedUser, createdItem };
       }
 
       throw new AuthenticationError("You need to be logged in!");

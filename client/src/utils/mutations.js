@@ -25,3 +25,42 @@ export const LOGIN = gql`
     }
   }
 `;
+
+export const ADD_ITEM = gql`
+  mutation addItem(
+    $itemName: String!
+    $itemDesc: String!
+    $itemPrice: String!
+    $itemImage: String
+  ) {
+    addItem(
+      itemName: $itemName
+      itemDesc: $itemDesc
+      itemPrice: $itemPrice
+      itemImage: $itemImage
+    ) {
+      updatedUser {
+        _id
+        username
+        email
+        itemCount
+        items {
+          _id
+          itemName
+          itemPrice
+          itemDesc
+          itemImage
+          postedAt
+        }
+      }
+      createdItem {
+        _id
+        itemName
+        itemDesc
+        itemPrice
+        itemImage
+        postedAt
+      }
+    }
+  }
+`;
