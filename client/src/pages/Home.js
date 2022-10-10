@@ -11,13 +11,14 @@ const Home = () => {
   return (
     <main>
       <div className="">
+        <h1>Test HomePage</h1>
         {loggedIn && (
           <div className="">
             
           </div>
         )}
     
-        {loggedIn && userData ? (
+        {loggedIn ? (
           <div className="">
             
           </div>
