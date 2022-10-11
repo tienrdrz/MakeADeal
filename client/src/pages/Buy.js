@@ -6,14 +6,14 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { QUERY_ITEM } from "../utils/queries";
 
-const Buy = () => {
+function Buy() {
   const { id } = useParams();
 
   const [currentProduct, setCurrentProduct] = useState({});
 
   const { data } = useQuery(QUERY_ITEM);
 
-  const products = data?.products || [];
+  const products = data?.items || [];
 
   useEffect(() => {
     if (products.length) {
@@ -32,7 +32,6 @@ const Buy = () => {
           <p>
             <strong>Price:</strong>${currentProduct.price}{" "}
             <button>Buy it!</button>
-            {/* <button>Remove from Cart</button> */}
           </p>
 
           <img
@@ -45,6 +44,6 @@ const Buy = () => {
       )}
     </>
   );
-};
+}
 
 export default Buy;
