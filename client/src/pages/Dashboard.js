@@ -84,7 +84,7 @@ function Dashboard() {
         </div>
       ) : (
         <div className="">
-          <p>please login into your account dashboard</p>
+          <p>Please login into your account dashboard</p>
         </div>
       )}
     </div>
