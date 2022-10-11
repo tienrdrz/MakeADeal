@@ -2,18 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function ProductItem(item) {
-  const { image, name, _id, price } = item;
-
-  // return (
-  //   <div>
-  //     <div>
-  //       <img src="" alt="" />
-  //       <p>itemName: xxx</p>
-  //       <p>itemDesc: xxxxxx</p>
-  //       <p>itemPrice: 11.99</p>
-  //     </div>
-  //   </div>
-  // );
+  const { image, name, _id, price, desc } = item;
 
   return (
     <div className="">
@@ -23,8 +12,9 @@ function ProductItem(item) {
       </Link>
       <div>
         <span>${price}</span>
+        <p>{desc}</p>
       </div>
-      <button>Add to cart</button>
+      <button>Buy</button>
     </div>
   );
 }

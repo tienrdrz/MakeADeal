@@ -13,7 +13,7 @@ const Home = () => {
         {loggedIn && userData ? <div className=""></div> : null}
       </div> */}
       Hello world
-      {/* <ItemList product={product} /> */}
+      <ItemList />
       <ul>
         <li>1</li>
         <li>1</li>
