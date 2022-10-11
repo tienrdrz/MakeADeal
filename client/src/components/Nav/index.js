@@ -9,13 +9,12 @@ const Nav = () => {
     <nav class="navbar">	
     {Auth.loggedIn()? (
         <>
-        <Link to="/buy">Buy</Link>
+        <Link to="/itemlist">View Listings</Link>
         </>
     ) : (
         <>
-        <Link to="/buy"><h2>Buy</h2></Link>
-        <Link to="/sell"><h2>Sell</h2></Link>
-        <Link to="/trade"><h2>Trade</h2></Link>
+        <Link to="/itemlist"><h2>View Listings</h2></Link>
+        <Link to="/dashboard"><h2>My Listings</h2></Link>
         </>
     )}
     </nav>
