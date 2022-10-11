@@ -5,9 +5,7 @@ import Auth from "../../utils/auth";
 function ProductItem(item) {
   const { image, name, _id, price, desc } = item;
 
-  const purchase = () => {
-
-  }
+  const purchase = () => {};
 
   return (
     <div className="">
@@ -20,8 +18,8 @@ function ProductItem(item) {
         <span>Total: ${price}</span>
       </div>
       {Auth.loggedIn() ? (
-      <button onClick={purchase}>Purchase</button>
-      ) : ( 
+        <button onClick={purchase}>Purchase</button>
+      ) : (
         <span> You must be logged in to purchase an item!</span>
       )}
     </div>

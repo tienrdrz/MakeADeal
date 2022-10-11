@@ -7,7 +7,6 @@ function ItemList() {
   const { data } = useQuery(QUERY_ALL_ITEMS);
 
   const items = data?.items || [];
-
   return (
     <div className="">
       <div className="">
@@ -18,6 +17,7 @@ function ItemList() {
             name={item.itemName}
             price={item.itemPrice}
             image={item.itemImage}
+            desc={item.itemDesc}
           />
         ))}
       </div>
