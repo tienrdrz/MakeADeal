@@ -18,7 +18,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Dashboard from "./pages/Dashboard";
-import ItemList from "./components/ItemList";
+//import ItemList from "./components/ItemList";
 //import Buy from './pages/Buy';
 //import Sell from './pages/Sell';
 //import Trade from './pages/Trade';
@@ -56,7 +56,7 @@ function App() {
               <Route path="/signup" element={<Signup />} />
               <Route path="/login" element={<Login />} />
               <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/itemlist" element={<ItemList />} />
+              {/* <Route path="/itemlist" element={<ItemList />} /> */}
               {/* <Route path="/trade" element={<Trade />} /> */}
               {/* <Route path="/sell" element={<Sell />} /> */}
             </Routes>
