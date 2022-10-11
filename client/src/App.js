@@ -10,14 +10,18 @@ import {
   createHttpLink,
 } from '@apollo/client';
 
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Nav from "./components/Nav";
 
-import Home from './pages/Home';
-import { from } from '@apollo/client';
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Dashboard from "./pages/Dashboard";
+import Buy from "./pages/Buy";
 
 const httpLink = createHttpLink({
-  uri: '/graphql',
+  uri: "/graphql",
 });
 
 /*const authLink = setContext((_, { headers }) => {
@@ -25,7 +29,7 @@ const httpLink = createHttpLink({
   return {
     headers: {
       ...headers,
-      authorization: token ? `Bearer ${token}` : '',
+      authorization: token ? `Bearer ${token}` : "",
     },
   };
 });

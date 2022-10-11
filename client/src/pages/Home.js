@@ -1,13 +1,9 @@
-import React from 'react';
-
-
-import Auth from '../utils/auth';
-
+import React, { useState } from "react";
+import ItemList from "../components/ItemList";
+//import Dashboard from "./Dashboard";
+//import Auth from "../utils/auth";
 
 const Home = () => {
-
-  const loggedIn = Auth.loggedIn();
-
   return (
     <main>
       <div className="">
