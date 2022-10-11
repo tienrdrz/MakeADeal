@@ -7,7 +7,6 @@ function ItemList() {
   const { data } = useQuery(QUERY_ALL_ITEMS);
 
   const items = data?.items || [];
-
   return (
     <div className="">
       <div className="">

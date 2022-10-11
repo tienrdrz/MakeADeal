@@ -9,19 +9,18 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
-
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Nav from './components/Nav';
+import Nav from "./components/Nav";
 
-import Home from './pages/Home';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
 //import ItemList from "./components/ItemList";
-import ProductItem from "./components/ProductItem";
-import SingleItem from "./pages/SingleItem";
-//import Buy from './pages/Buy';
+// import ProductItem from "./components/ProductItem";
+// import SingleItem from "./pages/SingleItem";
+import Buy from './pages/Buy';
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -56,8 +55,9 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/dashboard" element={<Dashboard />} />
               {/* <Route path="/itemlist" element={<ItemList />} /> */}
-              <Route path="/products/:id" element={<ProductItem />} />
-              <Route path="/singleitem" element={<SingleItem />} />
+              {/* <Route path="/products/:id" element={<ProductItem />} />
+              <Route path="/singleitem" element={<SingleItem />} /> */}
+              <Route path="/buy" element={<Buy />} />
             </Routes>
           </div>
 
