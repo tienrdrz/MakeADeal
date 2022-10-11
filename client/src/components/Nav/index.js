@@ -10,11 +10,12 @@ const Nav = () => {
     {Auth.loggedIn()? (
         <>
         <Link to="/itemlist">View Listings</Link>
+        <Link to="/dashboard">My Listings</Link>
         </>
     ) : (
         <>
-        <Link to="/itemlist"><h2>View Listings</h2></Link>
-        <Link to="/dashboard"><h2>My Listings</h2></Link>
+        <Link to="/itemlist">View Listings</Link>
+
         </>
     )}
     </nav>
