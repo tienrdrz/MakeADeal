@@ -12,7 +12,7 @@ export const QUERY_ALL_ITEMS = gql`
 `;
 
 export const QUERY_ITEM = gql`
-  query item($_id: ID) {
+  query item($_id: ID!) {
     item(_id: $_id) {
       itemName
       itemDesc
