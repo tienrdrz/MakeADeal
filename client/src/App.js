@@ -20,8 +20,7 @@ import Signup from './pages/Signup';
 import Buy from './pages/Buy';
 import Sell from './pages/Sell';
 import Trade from './pages/Trade';
-
-//import { from } from '@apollo/client';
+import Dashboard from "./pages/Dashboard";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -54,6 +53,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/buy" element={<Buy />} />
               <Route path="/trade" element={<Trade />} />
               <Route path="/sell" element={<Sell />} />

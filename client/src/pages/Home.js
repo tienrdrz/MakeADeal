@@ -1,5 +1,5 @@
-import React from "react";
-
+import React, { useState } from "react";
+import ItemList from "../components/ItemList";
 // import Auth from "../utils/auth";
 
 const Home = () => {
@@ -13,7 +13,7 @@ const Home = () => {
         {loggedIn && userData ? <div className=""></div> : null}
       </div> */}
       Hello world
-      {/* <ItemList /> */}
+      {/* <ItemList product={product} /> */}
       <ul>
         <li>1</li>
         <li>1</li>
