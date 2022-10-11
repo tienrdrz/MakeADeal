@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Auth from "../utils/auth";
 import { useMutation } from "@apollo/client";
 import { ADD_ITEM } from "../utils/mutations";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 
 function Dashboard() {
   const [formState, setFormState] = useState({
@@ -84,7 +84,7 @@ function Dashboard() {
         </div>
       ) : (
         <div className="">
-          <p>Please login into your account dashboard</p>
+          <p>Please login into your account!</p>
         </div>
       )}
     </div>

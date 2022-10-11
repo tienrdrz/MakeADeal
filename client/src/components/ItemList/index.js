@@ -18,6 +18,7 @@ function ItemList() {
             name={item.itemName}
             price={item.itemPrice}
             image={item.itemImage}
+            desc={item.itemDesc}
           />
         ))}
       </div>

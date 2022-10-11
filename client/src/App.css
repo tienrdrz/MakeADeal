@@ -11,7 +11,7 @@ body {
   justify-content: center;
   /* align-items: center; */
   /* 渐变背景 */
-  background: linear-gradient(200deg, #f3e7e9, #e3eeff);
+  background: linear-gradient(300deg, #f3e7e9, #e3eeff);
 }
 
 /****** Header ******/
@@ -20,6 +20,11 @@ body {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+}
+
+.header h1 {
+  color: #42567e;
+  text-align: center;
 }
 
 .login-signup-list {

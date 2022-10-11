@@ -63,7 +63,7 @@ db.once("open", async () => {
       itemName: "Tablet",
       itemDesc:
         "In sodales, ipsum quis ultricies porttitor, tellus urna aliquam arcu, eget venenatis purus ligula ut nisi. Fusce ut felis dolor. Mauris justo ante, aliquet non tempus in, tempus ac lorem.",
-      itemImage: "tablet.jpg",
+      itemImage: "https://www.collinsdictionary.com/images/full/tablet_160057670_1000.jpg",
       itemPrice: 199.99,
     },
     {

@@ -18,8 +18,9 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Dashboard from "./pages/Dashboard";
-import ItemList from "./components/ItemList";
+//import ItemList from "./components/ItemList";
 import ProductItem from "./components/ProductItem";
+import SingleItem from "./pages/SingleItem";
 //import Buy from './pages/Buy';
 
 const httpLink = createHttpLink({
@@ -54,8 +55,9 @@ function App() {
               <Route path="/signup" element={<Signup />} />
               <Route path="/login" element={<Login />} />
               <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/itemlist" element={<ItemList />} />
+              {/* <Route path="/itemlist" element={<ItemList />} /> */}
               <Route path="/products/:id" element={<ProductItem />} />
+              <Route path="/singleitem" element={<SingleItem />} />
             </Routes>
           </div>
 
