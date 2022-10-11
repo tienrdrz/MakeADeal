@@ -18,9 +18,10 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Buy from './pages/Buy';
-import Sell from './pages/Sell';
-import Trade from './pages/Trade';
 import Dashboard from "./pages/Dashboard";
+//import Sell from './pages/Sell';
+//import Trade from './pages/Trade';
+
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -55,8 +56,8 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/buy" element={<Buy />} />
-              <Route path="/trade" element={<Trade />} />
-              <Route path="/sell" element={<Sell />} />
+              {/* <Route path="/trade" element={<Trade />} /> */}
+              {/* <Route path="/sell" element={<Sell />} /> */}
             </Routes>
           </div>
 
