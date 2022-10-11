@@ -31,8 +31,8 @@ const Buy = () => {
 
           <p>
             <strong>Price:</strong>${currentProduct.price}{" "}
-            <button>Add to Cart</button>
-            <button>Remove from Cart</button>
+            <button>Buy it!</button>
+            {/* <button>Remove from Cart</button> */}
           </p>
 
           <img
