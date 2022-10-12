@@ -29,7 +29,7 @@ Login:
 
 ## Links 
 
-GitHub Repository: https://github.com/tienrdrz/TradeWay
+GitHub Repository: https://github.com/tienrdrz/MakeADeal
 
 Deployed URL:
 
