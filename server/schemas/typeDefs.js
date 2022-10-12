@@ -42,7 +42,7 @@ const typeDefs = gql`
       itemName: String!
       itemDesc: String!
       itemPrice: String!
-      itemImage: String
+      itemImage: [String]
     ): Products
   }
 `;
