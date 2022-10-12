@@ -21,3 +21,20 @@ export const QUERY_ITEM = gql`
     }
   }
 `;
+
+export const QUERY_ME = gql`
+  {
+    me {
+      _id
+      username
+      email
+      itemCount
+      items {
+        itemName
+        itemDesc
+        itemPrice
+        itemImage
+      }
+    }
+  }
+`;

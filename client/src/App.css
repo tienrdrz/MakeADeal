@@ -201,6 +201,28 @@ input:focus::placeholder {
   color: #fff;
 }
 
+/******** dashboard show product ********/
+.container-card {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.1);
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 100px;
+  height: 168px;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+}
+
+.card-detail {
+  flex: 1;
+  text-align: center;
+}
 
 /* -------------------------------------------------- */
 .App {
