@@ -12,12 +12,29 @@ export const QUERY_ALL_ITEMS = gql`
 `;
 
 export const QUERY_ITEM = gql`
-  query item($_id: ID) {
+  query item($_id: ID!) {
     item(_id: $_id) {
       itemName
       itemDesc
       itemPrice
       itemImage
+    }
+  }
+`;
+
+export const QUERY_ME = gql`
+  {
+    me {
+      _id
+      username
+      email
+      itemCount
+      items {
+        itemName
+        itemDesc
+        itemPrice
+        itemImage
+      }
     }
   }
 `;

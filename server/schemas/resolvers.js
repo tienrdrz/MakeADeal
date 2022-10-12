@@ -35,6 +35,7 @@ const resolvers = {
     },
     // query one product
     item: async (parent, { _id }) => {
+      console.log(_id);
       return await Item.findById(_id);
     },
   },
