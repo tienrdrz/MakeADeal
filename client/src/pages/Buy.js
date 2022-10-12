@@ -1,19 +1,26 @@
 // import { useMutation } from '@apollo/client';
-// import Auth from '../utils/auth';
 
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { QUERY_ITEM } from "../utils/queries";
+import Auth from "../utils/auth";
 
 function Buy() {
   const { id } = useParams();
 
   const [currentProduct, setCurrentProduct] = useState({});
 
-  const { data } = useQuery(QUERY_ITEM);
+  const { data, error } = useQuery(QUERY_ITEM, {
+    variables: id,
+  });
 
-  const products = data?.items || [];
+  console.log(useQuery(QUERY_ITEM, { variables: id }));
+  console.log(error);
+  console.log(id, data);
+
+  const products = data?.item || [];
+  console.log(products);
 
   useEffect(() => {
     if (products.length) {
@@ -23,24 +30,25 @@ function Buy() {
 
   return (
     <>
-      {currentProduct ? (
+      {products ? (
         <div className="">
-          <h2>{currentProduct.name}</h2>
-
-          <p>{currentProduct.description}</p>
-
+          <h2>{products.itemName}</h2>
+          <img src={`/images/${products.image}`} alt={products.itemName} />
+          <p>{products.itemDesc}</p>
           <p>
-            <strong>Price:</strong>${currentProduct.price}{" "}
-            <button>Buy it!</button>
+            <strong>Price:</strong>${products.itemPrice}{" "}
+            {Auth.loggedIn() ? (
+              <button>Purchase</button>
+            ) : (
+              <span> You must be logged in to purchase an item!</span>
+            )}
+            {/* <button>Buy it!</button> */}
           </p>
-
-          <img
-            src={`/images/${currentProduct.image}`}
-            alt={currentProduct.name}
-          />
         </div>
       ) : (
-        <h2>No item</h2>
+        <div>
+          <h2>No item</h2>
+        </div>
       )}
     </>
   );

@@ -4,14 +4,11 @@
 }
 
 body {
-  /* 100% 窗口高度 */
   height: 100vh;
-  /* 弹性布局 水平+垂直居中 */
   display: flex;
   justify-content: center;
   /* align-items: center; */
-  /* 渐变背景 */
-  background: linear-gradient(300deg, #f3e7e9, #e3eeff);
+  background: linear-gradient(200deg, #f3e7e9, #e3eeff);
 }
 
 /****** Header ******/
@@ -41,22 +38,23 @@ body {
   
 }
 
+/****** Nav ******/
+.navbar {
+  margin-bottom: 60px;
+}
 
-/****** Signup ******/
+/****** Signup login ******/
 
 .container {
   background-color: #fff;
   width: 650px;
   height: 415px;
   border-radius: 5px;
-  /* 阴影 */
   box-shadow: 5px 5px 5px rgba(0,0,0,0.1);
-  /* 相对定位 */
   position: relative;
 }
 
 .form-box {
-  /* 绝对定位 */
   position: absolute;
   top: -10%;
   left: 5%;
@@ -69,7 +67,6 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 2;
-  /* 动画多度 加速后减速 */
   transition: 0.5s ease-in-out;
   display: flex;
   flex-direction: column;
@@ -81,7 +78,6 @@ body {
 }
 
 .register-box, .login-box {
-  /* 弹性布局 垂直排列 */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -91,10 +87,8 @@ body {
 h1 {
   text-align: center;
   margin-bottom: 25px;
-  /* 大写 */
   text-transform: uppercase;
   color: #fff;
-  /* 字间距 */
   letter-spacing: 5px;
 }
 
@@ -103,7 +97,6 @@ input {
   width: 70%;
   color: #fff;
   border: none;
-  /* 下边框样式 */
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
   padding: 10px 0;
   text-indent: 10px;
@@ -148,12 +141,10 @@ input:focus::placeholder {
 
 .con-box {
   width: 50%;
-  /* 弹性布局 垂直排列 居中 */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* 绝对定位 居中 */
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -204,6 +195,84 @@ input:focus::placeholder {
 .con-box button:hover {
   background-color: #d3b7d8;
   color: #fff;
+}
+
+/******** dashboard show product ********/
+.my-item {
+  margin-top: 20px;
+}
+
+.container-card {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.1);
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.card {
+  width: 168px;
+  height: 100px;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  margin: 10px 10px;
+}
+
+.card-detail {
+  flex: 1;
+  text-align: center;
+}
+
+.image-size {
+  width: 117px;
+  height: 70px;
+}
+
+/******** ProductItem *********/
+
+.home-items {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+  /* background-color: #fff; */
+}
+
+.home-items .item-border {
+  width: 220px;
+  height: 369px;
+  background-color: #f6f6f695;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.1);
+  position: relative;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5px;
+}
+
+.home-items img {
+  width: 168px;
+  height: 100px;
+}
+
+.item-detail {
+  margin: 10px 0;
+  padding: 0 5px;
+}
+
+/****** Footer  ******/
+.footer {
+  margin-top: 80px;
+  text-align: center;
 }
 
 

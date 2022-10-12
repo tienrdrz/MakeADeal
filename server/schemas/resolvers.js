@@ -35,7 +35,10 @@ const resolvers = {
     },
     // query one product
     item: async (parent, { _id }) => {
-      return await Item.findById(_id);
+      const item = await Item.findById(_id);
+      console.log(_id);
+
+      return item;
     },
   },
   Mutation: {
@@ -63,6 +66,7 @@ const resolvers = {
     },
     addItem: async (parent, args, context) => {
       if (context.user) {
+        console.log(args);
         const createdItem = await Item.create(args);
 
         const updatedUser = await User.findByIdAndUpdate(

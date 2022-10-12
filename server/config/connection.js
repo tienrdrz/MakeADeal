@@ -1,13 +1,13 @@
 const mongoose = require("mongoose");
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/TradeWay",
-  (err) => {
-    if (err) throw err;
-    console.log("connected to MongoDB");
-  }
+  process.env.MONGODB_URI || 'mongodb://localhost:27017/makeadeal123',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  },
 );
 
-mongoose.set('debug', true);
+mongoose.set("debug", true);
 
 module.exports = mongoose.connection;
