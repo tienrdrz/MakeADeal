@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Auth from "../utils/auth";
 import { useMutation } from "@apollo/client";
 import { ADD_ITEM } from "../utils/mutations";
+import MyItem from "../components/MyItem";
 import { Link } from "react-router-dom";
 
 function Dashboard() {
@@ -81,6 +82,9 @@ function Dashboard() {
             </div>
             <button>Add New Item</button>
           </form>
+          <div>
+            <MyItem />
+          </div>
         </div>
       ) : (
         <div className="">
