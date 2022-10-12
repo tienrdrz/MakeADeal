@@ -7,6 +7,7 @@ export const QUERY_ALL_ITEMS = gql`
       itemName
       itemDesc
       itemPrice
+      itemImage
     }
   }
 `;
