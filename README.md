@@ -35,7 +35,7 @@ Everyone involved in this project can be found on github below:
 - [Etienne Rodriguez](https://github.com/tienrdrz)
 
 ### Licenses
-[![License](https://img.shields.io/badge/License-Express-orange.svg)](https://opensource.org/licenses/Express)
+[![License](https://img.shields.io/badge/License-Express-blue.svg)](https://opensource.org/licenses/Express)
 [![License](https://img.shields.io/badge/License-React-green.svg)](https://opensource.org/licenses/React)
 [![License](https://img.shields.io/badge/License-Apollo-red.svg)](https://opensource.org/licenses/Apollo)
 [![License](https://img.shields.io/badge/License-dotenv-yellow.svg)](https://opensource.org/licenses/dotenv)
