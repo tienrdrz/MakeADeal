@@ -11,10 +11,12 @@ function Buy() {
 
   const [currentProduct, setCurrentProduct] = useState({});
 
-  const { data } = useQuery(QUERY_ITEM, {
+  const { data, error } = useQuery(QUERY_ITEM, {
     variables: id,
   });
+
   console.log(useQuery(QUERY_ITEM, { variables: id }));
+  console.log(error);
   console.log(id, data);
 
   const products = data?.item || [];
