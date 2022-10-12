@@ -6,25 +6,44 @@ const typeDefs = gql`
     username: String
     email: String
     itemCount: Int
-    items: [item]
+    items: [Item]
   }
 
-  type item {
+  type Item {
     _id: ID
-    content: String
-    date: String
+    itemName: String
+    postedAt: String
+    itemDesc: String
+    itemPrice: String
+    itemImage: String
+  }
+
+  type Products {
+    updatedUser: User
+    createdItem: Item
   }
 
   type Query {
     me: User
+    user(email: String!): User
+    items: [Item]
+    item(_id: ID!): Item
   }
+
   type Auth {
     token: ID!
     user: User
   }
+
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
+    addItem(
+      itemName: String!
+      itemDesc: String!
+      itemPrice: String!
+      itemImage: String
+    ): Products
   }
 `;
 
