@@ -3,6 +3,7 @@ import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
 import { Link } from "react-router-dom";
+import Logo from "../assets/images/favicon (2).ico";
 
 function Signup(props) {
   const [formState, setFormState] = useState({
@@ -76,7 +77,7 @@ function Signup(props) {
         <p>
           Come and find exciting <span>items</span>
         </p>
-        <img src="" alt="" />
+        <img src={Logo} alt="logo" />
         <p>Already have an account</p>
         <button id="login">
           <Link to="/login">Go Login</Link>
