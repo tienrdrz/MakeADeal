@@ -1,4 +1,4 @@
-# TradeWay
+# MakeADeal
 
 ## Table Of Contents
 
@@ -11,7 +11,7 @@
 
 ## Description
 
-TradeWay is a digital marketplace where you can view items that users have posted through our website. Creating an account will allow a user to purchase any item that catches their eye, as well as create their own listings and sell their own items!
+MakeADeal is a digital marketplace where you can view items that users have posted through our website. Creating an account will allow a user to purchase any item that catches their eye, as well as create their own listings and sell their own items!
 
 ## Usage
 
