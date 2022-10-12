@@ -10,14 +10,17 @@ const Header = () => {
   };
 
     return(
-        <header className='Header'>
-            <div className='container'>
+        
+        <header className="Header mainH">
+            <div className="container">
+            <div className="flex">
                 
-                <h1>Trading Exchange</h1>
+                
 
 
                 
                 <nav className='nav'>
+                <h1>Trade Way</h1>
                     {Auth.loggedIn()? (
                        <>
                      
@@ -34,8 +37,9 @@ const Header = () => {
                  </nav>
             </div>
         
-        
+            </div>
       </header>
+      
     
   );
 };

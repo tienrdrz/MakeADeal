@@ -15,18 +15,13 @@ const Home = () => {
   return (
     <main>
       <div className="">
-        <h1>Trading Way</h1>
         
-        <Link to="/login">Login</Link>
-        <h2>Dashboard</h2>
         
-        <div>
         
-        </div>
-        <h2></h2>
         
-      </div>
+      
       <ItemList></ItemList>
+      </div>
     </main>
   );
 };

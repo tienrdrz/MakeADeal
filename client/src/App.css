@@ -5,6 +5,7 @@
 
 body {
   /* 100% 窗口高度 */
+  
   height: 100vh;
   /* 弹性布局 水平+垂直居中 */
   display: flex;
@@ -20,6 +21,7 @@ body {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  background-color: #d3b7d8;
 }
 
 .login-signup-list {
@@ -50,6 +52,31 @@ body {
   position: relative;
 }
 
+.mainH{
+  background-color: salmon;
+}
+
+.flex{
+  display: flex;
+  align-items: flex-start;
+  color: #282c34;
+}
+header{
+  justify-content: space-between;
+}
+header nav{
+  align-items: flex-end;
+  align-content: flex-end;
+  
+  width: 100%;
+  padding: 10%;
+
+}
+
+header nav a{
+  align-items: center;
+  align-items: flex-end;
+}
 .form-box {
   /* 绝对定位 */
   position: absolute;
@@ -217,6 +244,10 @@ input:focus::placeholder {
   display: flex;
   justify-self: center;
   align-items: center;
+}
+
+header h1{
+  color: #282c34;
 }
 
 .card-detail {
