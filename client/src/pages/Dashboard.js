@@ -3,24 +3,52 @@ import Auth from "../utils/auth";
 import { useMutation } from "@apollo/client";
 import { ADD_ITEM } from "../utils/mutations";
 import MyItem from "../components/MyItem";
-import { Link } from "react-router-dom";
 
 function Dashboard() {
   const [formState, setFormState] = useState({
     name: "",
     desc: "",
     price: "",
-    file: "",
+    file: null,
   });
 
   const [addItem] = useMutation(ADD_ITEM);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
+
     setFormState({
       ...formState,
       [name]: value,
     });
+  };
+
+  const handleUploadImage = async (event) => {
+    event.preventDefault();
+
+    let base64String = "";
+    // console.log(event.target.files[0]);
+
+    var reader = new FileReader();
+    console.log("next");
+
+    reader.onload = function () {
+      base64String = reader.result.replace("data:", "").replace(/^.+,/, "");
+      // const imageStrings = [];
+      // let i = 0;
+      // while (i < base64String.length) {
+      //   imageStrings.push(base64String.slice(i, i + 250));
+      //   i = i + 250;
+      // }
+      // console.log(imageStrings);
+
+      setFormState({
+        ...formState,
+        // file: imageStrings,
+        file: base64String,
+      });
+    };
+    reader.readAsDataURL(event.target.files[0]);
   };
 
   const handleFormSubmit = async (event) => {
@@ -39,7 +67,7 @@ function Dashboard() {
       name: "",
       desc: "",
       price: "",
-      file: "",
+      file: null,
     });
   };
 
@@ -78,7 +106,7 @@ function Dashboard() {
             </div>
             <div className="">
               <label htmlFor="file">Image:</label>
-              <input type="file" name="file" onChange={handleChange} />
+              <input type="file" name="file" onChange={handleUploadImage} />
             </div>
             <button>Add New Item</button>
           </form>

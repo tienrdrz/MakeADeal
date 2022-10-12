@@ -13,7 +13,7 @@ function MyItem() {
 
   return (
     <div>
-      <div>
+      <div className="my-item">
         <Link to="/">← Back to Products</Link>
 
         {user ? (
@@ -23,13 +23,12 @@ function MyItem() {
               {user.items.map((item) => (
                 <div key={item._id} className="card">
                   <div className="card-detail">
-                    <Link to={`/products/${item._id}`}>
-                      <img
-                        alt={item.itemName}
-                        src={`/images/${item.itemImage}`}
-                      />
-                      <p>{item.itemName}</p>
-                    </Link>
+                    <img
+                      alt={item.itemName}
+                      src={`data:image/png;base64, ${item.itemImage}`}
+                      className="image-size"
+                    />
+                    <p>{item.itemName}</p>
                     <p>${item.itemPrice}</p>
                   </div>
                 </div>
