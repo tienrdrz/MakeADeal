@@ -1,5 +1,5 @@
 import React from 'react';
-//import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import Auth from '../../utils/auth';
 
@@ -14,6 +14,8 @@ const Header = () => {
             <div className='container'>
                 
                 <h1>Trading Exchange</h1>
+
+
                 
                 <nav className='nav'>
                     {Auth.loggedIn()? (
@@ -25,7 +27,8 @@ const Header = () => {
                      </>
                    ) : (
                      <>
-                      
+                        <Link to="/login">Login</Link>
+                        <Link to="/signup">Signup</Link>
                      </>
                    )}
                  </nav>
