@@ -1,10 +1,6 @@
 const { Schema, model } = require("mongoose");
 const dateFormat = require("../utils/dateFormat");
 
-// const BuySchema = new Schema({
-
-// })
-
 const itemSchema = new Schema({
   itemName: {
     type: String,
