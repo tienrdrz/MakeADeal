@@ -31,7 +31,7 @@ export const ADD_ITEM = gql`
     $itemName: String!
     $itemDesc: String!
     $itemPrice: String!
-    $itemImage: String
+    $itemImage: [String]
   ) {
     addItem(
       itemName: $itemName
