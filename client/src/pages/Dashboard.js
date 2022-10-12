@@ -9,7 +9,7 @@ function Dashboard() {
     name: "",
     desc: "",
     price: "",
-    file: [],
+    file: null,
   });
 
   const [addItem] = useMutation(ADD_ITEM);
@@ -34,17 +34,18 @@ function Dashboard() {
 
     reader.onload = function () {
       base64String = reader.result.replace("data:", "").replace(/^.+,/, "");
-      const imageStrings = [];
-      let i = 0;
-      while (i < base64String.length) {
-        imageStrings.push(base64String.slice(i, i + 250));
-        i = i + 250;
-      }
-      console.log(imageStrings);
+      // const imageStrings = [];
+      // let i = 0;
+      // while (i < base64String.length) {
+      //   imageStrings.push(base64String.slice(i, i + 250));
+      //   i = i + 250;
+      // }
+      // console.log(imageStrings);
 
       setFormState({
         ...formState,
-        file: imageStrings,
+        // file: imageStrings,
+        file: base64String,
       });
     };
     reader.readAsDataURL(event.target.files[0]);
@@ -66,7 +67,7 @@ function Dashboard() {
       name: "",
       desc: "",
       price: "",
-      file: [],
+      file: null,
     });
   };
 

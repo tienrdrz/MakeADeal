@@ -5,7 +5,7 @@ import Auth from "../../utils/auth";
 const Nav = () => {
   return (
     <div>
-      <nav class="navbar">
+      <nav className="navbar">
         {Auth.loggedIn() ? (
           <>
             <Link to="/">View Listings</Link>

@@ -28,7 +28,7 @@ const itemSchema = new Schema({
     required: true,
   },
   itemImage: {
-    type: [String],
+    type: String,
   },
 });
 
